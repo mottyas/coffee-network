@@ -1,0 +1,36 @@
+
+.side_bar {
+  width: 15%;
+  height: 190px;
+  border-radius: 3px;
+  margin-top: 20px;
+  background: #E0C097;
+  float: left;
+  margin-left: 15%;
+  padding: 1%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #1E212D;
+  font-family: 'Roboto', sans-serif;
+}
+
+.menu i {
+  margin-right: 5px;
+}
+
+.menu li {
+  display: block;
+  margin-top: 10px;
+}
+
+.side_bar ul li:hover, .side_bar ul a:hover, #news_bar ul li:hover, #news_bar ul a:hover {
+  text-decoration: none;
+  color: #5C3D2E;
+}
+

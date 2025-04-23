@@ -1,0 +1,107 @@
+
+{% for message in messages %}
+  {% if message.sender == user %}
+  <div class="message media">
+    <div class="my-message" style="float: right" id='message{{message.id}}'>
+      <div class="message-info">
+        <a href="{% url 'users:user' message.sender.username %}"><img src="{{ message.sender.profile.avatar.url }}" alt="{{ message.sender.profile.avatar.url }}"></a>
+        <h4 class="user-name">{{message.sender.first_name}} {{message.sender.last_name}}</h4>
+        <time class="float-right">{{message.message_time}}</time>
+      </div>
+
+      <div class="message-text">
+        <p>{{message.message_text|linebreaks|urlizetrunc:30}}</p>
+      </div>
+    </div>
+  </div>
+  {% else %}
+    <div class="message media">
+    <div class="not-my-message" id='message{{message.id}}'>
+      <div class="message-info">
+        <a href="{% url 'users:user' message.sender.username %}"><img src="{{ message.sender.profile.avatar.url }}" alt="{{ message.sender.profile.avatar.url }}"></a>
+        <h4 class="user-name">{{message.sender.first_name}} {{message.sender.last_name}}</h4>
+        <time class="float-right">{{message.message_time}}</time>
+      </div>
+
+      <div class="message-text">
+        <p>{{message.message_text|linebreaks|urlizetrunc:30}}</p>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {% endfor %}
+
+
+
+
+<!--
+{% for message in messages %}
+  {% if message.sender == user %}
+    <div class="message" id="message{{message.id}}">
+      <a href="{% url 'users:user' message.sender.username %}">
+      <img class="contact-img" src="{{ message.sender.profile.avatar.url }}" alt="{{ message.reciever.first_name }}"></a>
+      <div class="media-body">
+        <h6 class="message-info">{{ message.sender.first_name }} {{ message.sender.last_name }} <time>{{ message.message_time }}</time></h6>
+        <div class="message-text">
+          {{ message.message_text }}
+        </div>
+      </div>
+    </div>
+    <div class="message" id="message{{message.id}}">
+      <a href="{% url 'users:user' message.sender.username %}">
+      <img class="contact-img" src="{{ message.sender.profile.avatar.url }}" alt="{{ message.sender.first_name }}"></a>
+      <div class="media-body">
+        <h6 class="message-info">{{ message.sender.first_name }} {{ message.sender.last_name }} <time>{{ message.message_time }}</time></h6>
+        <div class="message-text">
+          {{ message.message_text }}
+        </div>
+      </div>
+    </div>
+  {% else %}
+
+    <div class="message" id="message{{message.id}}">
+      <a href="{% url 'users:user' message.sender.username %}">
+      <img class="contact-img" src="{{ message.sender.profile.avatar.url }}" alt="{{ message.sender.first_name }}"></a>
+      <div class="media-body">
+        <h6 class="message-info">{{ message.sender.first_name }} {{ message.sender.last_name }} <time>{{ message.message_time }}</time></h6>
+        <div class="message-text">
+          {{ message.message_text }}
+        </div>
+      </div>
+    </div>
+
+  {% endif %}
+{% endfor %}
+
+
+
+
+
+
+<!--
+{% for message in messages %}
+  {% if message.sender == user %}
+    <div class="media w-75 bg-secondary mb-3 p-1 rounded" id='message{{message.id}}'>
+      <a href="{% url 'users:user' message.sender.username %}">
+      <img class="d-flex mr-3" src="{{ message.sender.profile.avatar.url }}" width="40px" alt="{{ message.sender.first_name }}"></a>
+      <div class="media-body">
+        <h6 class="mt-0 wordwrap textowerflow">{{message.sender.first_name}} {{message.sender.last_name}} <time class="float-right">{{message.message_time}}</time></h6>
+        <div class="wordwrap textowerflow">
+          {{message.message_text|linebreaks|urlizetrunc:30}}
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="media w-75 float-right bg-success mb-3 mr-1 p-1 rounded" id='message{{message.id}}'>
+      <div class="media-body">
+        <h6 class="mt-0 mb-1 wordwrap textowerflow">{{message.sender.first_name}} {{message.sender.last_name}} <time class="float-right">{{message.message_time}}</time></h6>
+        <div class="wordwrap textowerflow">
+          {{message.message_text|linebreaks|urlizetrunc:30}}
+        </div>
+      </div>
+      <a href="{% url 'users:user' message.sender.username %}"><img class="d-flex ml-3" src="{{ message.sender.profile.avatar.url }}" width="40px" alt="{{ message.sender.first_name }}"></a>
+    </div>
+  {% endif %}
+{% endfor %}
+-->

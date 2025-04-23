@@ -1,0 +1,19 @@
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'main/css/header.css' %}">
+{% endblock %}
+
+<header>
+    <div id="logo">
+        <span><a href="{% url 'news' %}"><i class="fas fa-coffee"></i>Coffee</a></span>
+    </div>
+
+    <div id="user">
+        {% if request.user.is_authenticated %}
+        <span><a href="{% url 'users:logout' %}">Выйти / {{ user.first_name }}</a></span>
+        {% else %}
+        <span><a href="{% url 'users:login' %}">Войти</a> / <a href="{% url 'users:register' %}">Зарегистрироваться</a></span>
+        {% endif %}
+    </div>
+</header>

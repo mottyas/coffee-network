@@ -1,0 +1,15 @@
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'main/css/menu.css' %}">
+{% endblock %}
+
+<div class="side_bar">
+    <ul class="menu">
+        <a href="{% url 'users:profile' %}"><li><i class="fas fa-home"></i> Мой кабинет</li></a>
+        <a href="{% url 'news' %}"><li><i class="fas fa-newspaper"></i> Новости</li></a>
+        <a href="{% url 'users:contacts' %}"><li><i class="fas fa-users"></i> Контакты</li></a>
+        <a href="{% url 'dialogs:messages' %}"><li><i class="fas fa-comment"></i> Мессенджер</li></a>
+    </ul>
+</div>
+

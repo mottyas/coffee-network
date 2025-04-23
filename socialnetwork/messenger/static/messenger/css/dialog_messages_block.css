@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,700;1,300&display=swap');
+
+
+.message {
+  width: 100%;
+  height: auto;
+  background: #E0C097;
+}
+
+
+.contact-img {
+  width: 50px;
+  margin: auto;
+  float: left;
+}
+
+.contact span a {
+  color: #000;
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+  text-align: justify;
+  display: block;
+  margin-left: 2%;
+  float: left;
+}
+
+.message .my-message {
+  width: 70%;
+  float: right;
+  background: #CA965C;
+  margin: 1%;
+  padding: 1%;
+  border: 1px solid;
+  border-radius: 5px;
+  text-align: justify;
+}
